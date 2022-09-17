@@ -1,10 +1,9 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({ title }) => {
   return (
-    <div className="flex flex-col items-center justify-center my-5">
-      <img></img>
-      <h1 className="text-3xl">POKEDEX</h1>
+    <div className="flex items-center justify-center my-5">
+      <h1 className="text-4xl mb-2 text-center uppercase">{title}</h1>
     </div>
   );
 };

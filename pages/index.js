@@ -1,10 +1,10 @@
 import Header from "./compnents/Header";
-import Link from "next/link";
+import Link from "next/Link";
 
 export default function Home({ pokemon }) {
   return (
     <>
-      <Header />
+      <Header title={"POKEDEX"} />
       <main className="px-4 py-12">
         <h1 className="text-5xl text-green-500 text-center">
           Pokedex - Gotta Catch em all!

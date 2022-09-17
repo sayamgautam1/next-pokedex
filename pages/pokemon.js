@@ -1,29 +1,31 @@
-import React from "react";
-
+import Header from "./compnents/Header";
 import Link from "next/Link";
+
 export default function pokemon({ mon }) {
   return (
-    <main title={mon.name}>
-      <h1 className="text-4xl mb-2 text-center capitalize">
-        {mon.id}. {mon.name}
-      </h1>
-      <img className="mx-auto" src={mon.image} alt={mon.name} />
-      <p>
-        <span className="font-bold mr-2">Weight:</span> {mon.weight}
-      </p>
-      <p>
-        <span className="font-bold mr-2">Height:</span>
-        {mon.height}
-      </p>
-      <h2 className="text-2xl mt-6 mb-2">Types</h2>
-      {mon.types.map((type, index) => (
-        <p key="index">{type.type.name}</p>
-      ))}
-      <p className="mt-10 text-center">
+    <main className="p-10">
+      <div className="mt-10">
         <Link href="/">
-          <a className="text-2xl underline">Home</a>
+          <a className="text-2xl underline">Back</a>
         </Link>
-      </p>
+      </div>
+
+      <div>
+        <Header title={mon.name} />
+
+        <img className="mx-auto" src={mon.image} alt={mon.name} />
+        <p>
+          <span className="font-bold mr-2">Weight:</span> {mon.weight}
+        </p>
+        <p>
+          <span className="font-bold mr-2">Height:</span>
+          {mon.height}
+        </p>
+        <h2 className="text-2xl mt-6 mb-2">Types</h2>
+        {mon.types.map((type, index) => (
+          <p key="index">{type.type.name}</p>
+        ))}
+      </div>
     </main>
   );
 }
