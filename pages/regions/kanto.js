@@ -1,4 +1,4 @@
-import Header from "./compnents/Header";
+import Header from "../compnents/Header";
 import Link from "next/Link";
 export default function Home({ pokemon }) {
   return (
@@ -10,7 +10,7 @@ export default function Home({ pokemon }) {
         </h1>
         <div className="flex flex-wrap w-full justify-center mt-8">
           {pokemon.map((pokeman, index) => (
-            <Link href={`/pokemon?id=${index + 152}`}>
+            <Link href={`/pokemon?id=${index + 1}`}>
               <div className="mr-3 mb-4 bg-gray-200 p-3 rounded text-center cursor-pointer">
                 <div className="w-32">
                   <img src={pokeman.image} alt={pokeman.name} />
@@ -28,13 +28,10 @@ export default function Home({ pokemon }) {
 
 export async function getStaticProps(context) {
   try {
-    const res = await fetch(
-      "https://pokeapi.co/api/v2/pokemon?limit=100&offset=151"
-    );
+    const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=150");
     const { results } = await res.json();
-    console.log({ results });
     const pokemon = results.map((pokeman, index) => {
-      const paddedId = ("00" + (index + 152)).slice(-3);
+      const paddedId = ("00" + (index + 1)).slice(-3);
 
       const image = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${paddedId}.png`;
       return { ...pokeman, image };
