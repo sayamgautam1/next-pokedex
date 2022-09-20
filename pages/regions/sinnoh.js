@@ -10,8 +10,11 @@ export default function Home({ pokemon }) {
         </h1>
         <div className="flex flex-wrap w-full justify-center mt-8">
           {pokemon.map((pokeman, index) => (
-            <Link href={`/pokemon?id=${index + 387}`}>
-              <div className="mr-3 mb-4 bg-gray-200 p-3 rounded text-center cursor-pointer">
+            <Link href={`/pokemon/${index + 387}`}>
+              <div
+                className="mr-3 mb-4 bg-gray-200 p-3 rounded text-center cursor-pointer"
+                key={index}
+              >
                 <div className="w-32">
                   <img src={pokeman.image} alt={pokeman.name} />
                 </div>

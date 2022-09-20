@@ -1,5 +1,7 @@
-import Header from "./compnents/Header";
+import { useRouter } from "next/router";
+import React from "react";
 import Link from "next/Link";
+import Header from "../compnents/Header";
 
 export default function pokemon({ mon }) {
   return (
