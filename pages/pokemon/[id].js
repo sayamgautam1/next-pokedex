@@ -4,12 +4,13 @@ import Link from "next/Link";
 import Header from "../compnents/Header";
 
 export default function pokemon({ mon }) {
+  const router = useRouter();
   return (
     <main className="p-10">
       <div className="mt-10">
-        <Link href="/">
-          <a className="text-2xl underline">Back</a>
-        </Link>
+        <a className="text-2xl underline" onClick={() => router.back()}>
+          Back
+        </a>
       </div>
 
       <div>

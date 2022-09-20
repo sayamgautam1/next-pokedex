@@ -4,6 +4,11 @@ export default function Home({ pokemon }) {
   return (
     <>
       <Header title={"POKEDEX"} />
+      <div className="mt-10 p-10">
+        <Link href="/">
+          <a className="text-2xl underline">Back</a>
+        </Link>
+      </div>
       <main className="px-4 py-12">
         <h1 className="text-5xl text-green-500 text-center">
           Pokedex - Gotta Catch em all!
@@ -35,7 +40,6 @@ export async function getStaticProps(context) {
       "https://pokeapi.co/api/v2/pokemon?limit=100&offset=151"
     );
     const { results } = await res.json();
-    console.log({ results });
     const pokemon = results.map((pokeman, index) => {
       const paddedId = ("00" + (index + 152)).slice(-3);
 
